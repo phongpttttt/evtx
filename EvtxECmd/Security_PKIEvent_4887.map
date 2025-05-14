@@ -1,0 +1,28 @@
+Author: phongpham
+Description: Certificate Services approved a certificate request and issued a certificate
+EventId: 4887
+Channel: Security
+Provider: Microsoft-Windows-Security-Auditing
+
+Maps:
+  -
+    Property: UserName
+    PropertyValue: "%Requester%"
+    Values:
+      -
+        Name: Requester
+        Value: "/Event/EventData/Data[@Name=\"Requester\"]"
+  -
+    Property: PayloadData1
+    PropertyValue: "%Attributes%"
+    Values:
+      -
+        Name: Attributes
+        Value: "/Event/EventData/Data[@Name=\"Attributes\"]"
+  -
+    Property: PayloadData2
+    PropertyValue: "Subject Key Identifier: %SubjectKeyIdentifier%"
+    Values:
+      -
+        Name: SubjectKeyIdentifier
+        Value: "/Event/EventData/Data[@Name=\"SubjectKeyIdentifier\"]"

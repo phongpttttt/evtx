@@ -1,0 +1,28 @@
+Author: phongpham
+Description: A Certificate Services template was updated
+EventId: 4899
+Channel: Security
+Provider: Microsoft-Windows-Security-Auditing
+
+Maps:
+  -
+    Property: PayloadData1
+    PropertyValue: "Template Name: %TemplateInternalName%"
+    Values:
+      -
+        Name: TemplateInternalName
+        Value: "/Event/EventData/Data[@Name=\"TemplateInternalName\"]"
+  -
+    Property: PayloadData2
+    PropertyValue: "Template FQDN: %TemplateDSObjectFQDN%"
+    Values:
+      -
+        Name: TemplateDSObjectFQDN
+        Value: "/Event/EventData/Data[@Name=\"TemplateDSObjectFQDN\"]"
+  -
+    Property: PayloadData3
+    PropertyValue: "Template Content Name: %TemplateContent%"
+    Values:
+      -
+        Name: TemplateContent
+        Value: "/Event/EventData/Data[@Name=\"TemplateContent\"]"

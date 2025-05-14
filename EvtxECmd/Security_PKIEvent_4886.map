@@ -1,0 +1,20 @@
+Author: phongpham
+Description: Certificate Services received a certificate request
+EventId: 4886
+Channel: Security
+Provider: Microsoft-Windows-Security-Auditing
+Maps:
+  -
+    Property: UserName
+    PropertyValue: "%Requester%"
+    Values:
+      -
+        Name: Requester
+        Value: "/Event/EventData/Data[@Name=\"Requester\"]"
+  -
+    Property: PayloadData1
+    PropertyValue: "%Attributes%"
+    Values:
+      -
+        Name: Attributes
+        Value: "/Event/EventData/Data[@Name=\"Attributes\"]"
